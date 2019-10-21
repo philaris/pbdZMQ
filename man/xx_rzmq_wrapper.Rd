@@ -10,7 +10,8 @@
 \alias{connect.socket}
 \title{All Wrapper Functions for rzmq}
 \usage{
-send.socket(socket, data, send.more = FALSE, serialize = TRUE)
+send.socket(socket, data, send.more = FALSE, serialize = TRUE,
+  serialversion = NULL)
 
 receive.socket(socket, unserialize = TRUE, dont.wait = FALSE)
 
@@ -31,6 +32,10 @@ connect.socket(socket, address)
 
 \item{serialize, unserialize}{Logical; determines if serialize/unserialize should be called
 on the sent/received data.}
+
+\item{serialversion}{NULL or numeric; the workspace format version to use when serializing.
+NULL specifies the current default version. The only other supported
+values are 2 and 3.}
 
 \item{dont.wait}{Logical; determines if reception is blocking.}
 
